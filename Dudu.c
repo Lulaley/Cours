@@ -1,0 +1,11 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main (void){
+	int i = 0;
+	while (i != 2){
+		printf("du");
+		i--;
+	}
+	exit(0);
+}

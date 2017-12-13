@@ -183,7 +183,7 @@ return 0;
 
 int calfibo(int nbr)
 {
-	int i,j,temp,k;
+	double i,j,temp,k;
 	i=0;
 	j=1;
 	
@@ -194,7 +194,7 @@ int calfibo(int nbr)
 		j=temp;
 	}
 	printf("\n+==========================================+");
-	printf("\n| Votre nombre Fibonacci est : %d           |",i);
+	printf("\n| Votre nombre Fibonacci est : %0.f          |",i);
 	printf("\n+==========================================+");
 	
 return 0;
@@ -297,30 +297,76 @@ return 0;
 
 int main()
 {
-	int nbr;
-	
+	int nbr,nummenu;
+		
 	printf("Veuillez entrez votre nombre :");
 	scanf("%d",&nbr);
 	
-	tablemultiplication(nbr);
-	tablediviseur(nbr);
-	if (nbpremier(nbr)==2)
+	printf("\n1 : Tableau des Multiplications");
+	printf("\n2 : Tableau des Diviseurs");
+	printf("\n3 : Test si le nombre est Premier");
+	printf("\n4 : Test si le nombre est Parfait");
+	printf("\n5 : Calcul du nombre Factorielle");
+	printf("\n6 : Calcul du nombre de Fibonacci");
+	printf("\n7 : Afficher le Triangle de Pascal");
+	printf("\n8 : Convertir le nombre en Binaire");
+	
+	printf("\nSelectionner votre choix :");
+	scanf("%d",&nummenu);
+	
+	switch(nummenu)
 	{
-		printf("\n+==========================+");
-		printf("\n| Votre nombre est premier |");
-		printf("\n+==========================+");
+		case 1 :
+		{
+			tablemultiplication(nbr);
+		}
+		break;
+		case 2 :
+		{	
+			tablediviseur(nbr);
+		}
+		break;
+		case 3 : 
+		{
+			if (nbpremier(nbr)==2)
+			{
+				printf("\n+==========================+");
+				printf("\n| Votre nombre est premier |");
+				printf("\n+==========================+");
+			}
+			else 
+			{
+				printf("\n+================================+");
+				printf("\n| Votre nombre n'est pas premier |");
+				printf("\n+================================+");
+			}
+		}
+		break;
+		case 4 :
+		{
+			nbparfait(nbr);
+		}
+		break;
+		case 5 :
+		{
+			calfacto(nbr);
+		}
+		break;
+		case 6 :
+		{
+			calfibo(nbr);
+		}
+		break;
+		case 7 :
+		{
+			pascal(nbr);
+		}
+		break;
+		case 8 :
+		{
+			converbinaire(nbr);
+		}
 	}
-	else 
-	{
-		printf("\n+================================+");
-		printf("\n| Votre nombre n'est pas premier |");
-		printf("\n+================================+");
-	}
-	nbparfait(nbr);
-	calfacto(nbr);
-	calfibo(nbr);
-	pascal(nbr);
-	converbinaire(nbr);
 	
 return 0;	
 }
